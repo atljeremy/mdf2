@@ -7,8 +7,15 @@
 //
 
 #import "MainTableViewController.h"
+#import "Event.h"
+#import "EventCell.h"
+#import "EventDetailTableViewController.h"
+
+#define kEventTableCellIdentifier @"EventTableCellIdentifier"
+#define kPushEventDetailsView @"PushEventDetailsView"
 
 @interface MainTableViewController ()
+@property (nonatomic, strong) NSMutableArray* events;
 
 @end
 
@@ -32,6 +39,110 @@
  
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    self.events = [NSMutableArray arrayWithCapacity:10];
+    NSCalendar *gregorian = [[NSCalendar alloc]
+                             initWithCalendarIdentifier:NSGregorianCalendar];
+    NSDateComponents *components = [[NSDateComponents alloc] init];
+    NSDate *date = [NSDate date];
+
+    [components setDay:11];
+    [components setMonth:1];
+    [components setYear:2013];
+    [components setHour:7];
+    [components setMinute:20];
+    date = [gregorian dateFromComponents:components];
+    [self.events addObject:[Event newEventWithTitle:@"Visit Mom" location:@"Arkport, NY" andDate:date]];
+    
+    components = nil;
+    components = [[NSDateComponents alloc] init];
+    [components setDay:24];
+    [components setMonth:2];
+    [components setYear:2013];
+    [components setHour:8];
+    [components setMinute:25];
+    date = [gregorian dateFromComponents:components];
+    [self.events addObject:[Event newEventWithTitle:@"Pick up dry cleaning" location:@"Dansville, NY" andDate:date]];
+    
+    components = nil;
+    components = [[NSDateComponents alloc] init];
+    [components setDay:13];
+    [components setMonth:3];
+    [components setYear:2013];
+    [components setHour:9];
+    [components setMinute:30];
+    date = [gregorian dateFromComponents:components];
+    [self.events addObject:[Event newEventWithTitle:@"Bella's soccer practice" location:@"Athens, GA" andDate:date]];
+
+    components = nil;
+    components = [[NSDateComponents alloc] init];
+    [components setDay:9];
+    [components setMonth:4];
+    [components setYear:2013];
+    [components setHour:10];
+    [components setMinute:35];
+    date = [gregorian dateFromComponents:components];
+    [self.events addObject:[Event newEventWithTitle:@"Finish school work" location:@"Home Office" andDate:date]];
+    
+    components = nil;
+    components = [[NSDateComponents alloc] init];
+    [components setDay:10];
+    [components setMonth:5];
+    [components setYear:2013];
+    [components setHour:11];
+    [components setMinute:40];
+    date = [gregorian dateFromComponents:components];
+    [self.events addObject:[Event newEventWithTitle:@"Pick up TV console" location:@"Lowes, Athens, GA" andDate:date]];
+    
+    components = nil;
+    components = [[NSDateComponents alloc] init];
+    [components setDay:8];
+    [components setMonth:6];
+    [components setYear:2013];
+    [components setHour:12];
+    [components setMinute:45];
+    date = [gregorian dateFromComponents:components];
+    [self.events addObject:[Event newEventWithTitle:@"Pick up Courtney" location:@"At the house" andDate:date]];
+    
+    components = nil;
+    components = [[NSDateComponents alloc] init];
+    [components setDay:27];
+    [components setMonth:7];
+    [components setYear:2013];
+    [components setHour:13];
+    [components setMinute:50];
+    date = [gregorian dateFromComponents:components];
+    [self.events addObject:[Event newEventWithTitle:@"Dental Appointment" location:@"Norcross, NY" andDate:date]];
+    
+    components = nil;
+    components = [[NSDateComponents alloc] init];
+    [components setDay:3];
+    [components setMonth:8];
+    [components setYear:2013];
+    [components setHour:14];
+    [components setMinute:55];
+    date = [gregorian dateFromComponents:components];
+    [self.events addObject:[Event newEventWithTitle:@"Rock out!" location:@"Athens, NY" andDate:date]];
+    
+    components = nil;
+    components = [[NSDateComponents alloc] init];
+    [components setDay:1];
+    [components setMonth:9];
+    [components setYear:2013];
+    [components setHour:15];
+    [components setMinute:00];
+    date = [gregorian dateFromComponents:components];
+    [self.events addObject:[Event newEventWithTitle:@"Go for a bike ride" location:@"Atlanta, NY" andDate:date]];
+    
+    components = nil;
+    components = [[NSDateComponents alloc] init];
+    [components setDay:18];
+    [components setMonth:10];
+    [components setYear:2013];
+    [components setHour:16];
+    [components setMinute:05];
+    date = [gregorian dateFromComponents:components];
+    [self.events addObject:[Event newEventWithTitle:@"Going skydiving" location:@"Rochester, NY" andDate:date]];
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,78 +155,50 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
+    return self.events.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    Event* currentEvent = [self.events objectAtIndex:indexPath.row];
     
-    // Configure the cell...
+    static NSString *CellIdentifier = kEventTableCellIdentifier;
+    EventCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    
+    cell.title.text = currentEvent.eventTitle;
+    
+    NSDate *eventDate = currentEvent.eventDateTime;
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    dateFormatter.dateFormat = @"MM/dd/yy h:mm a";
+    cell.date.text = [NSString stringWithFormat:@"%@", [dateFormatter stringFromDate:eventDate]];
+    
+    dateFormatter.dateFormat = @"dd";
+    cell.calendarDay.text = [NSString stringWithFormat:@"%@", [dateFormatter stringFromDate:eventDate]];
+    
+    dateFormatter.dateFormat = @"MMMM";
+    cell.calendarMonth.text = [NSString stringWithFormat:@"%@", [dateFormatter stringFromDate:eventDate]];
     
     return cell;
 }
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 #pragma mark - Table view delegate
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    [self performSegueWithIdentifier:kPushEventDetailsView sender:self];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:kPushEventDetailsView]) {
+        NSIndexPath *path = [self.tableView indexPathForSelectedRow];
+        Event* event = [self.events objectAtIndex:path.row];
+        [(EventDetailTableViewController*)segue.destinationViewController setEvent:event];
+    }
 }
 
 @end
