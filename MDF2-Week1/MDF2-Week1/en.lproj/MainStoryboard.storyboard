@@ -284,19 +284,122 @@
                                                 <action selector="dsimissCreateEventView:" destination="9fh-Kx-PLZ" id="lxJ-pW-eSB"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" title="Save" id="smM-b1-bvY">
+                                            <connections>
+                                                <action selector="saveEvent:" destination="9fh-Kx-PLZ" id="xNt-db-obq"/>
+                                            </connections>
+                                        </barButtonItem>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ZBu-fe-Kle">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Event Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FfN-JH-iMZ">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="lX0-m1-HOh"/>
+                                    <constraint firstAttribute="width" constant="102" id="mQw-em-I9j"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="vDL-qV-nhC">
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Event Date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBH-Ax-7hP">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="g70-Ep-YQJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Event Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hre-25-m6n">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="129" id="Wn2-ZY-9Oj"/>
+                                    <constraint firstAttribute="height" constant="21" id="hsq-em-OZj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="ny2-U9-MhH">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="216" id="Sma-En-Bv6"/>
+                                </constraints>
+                                <date key="date" timeIntervalSinceReferenceDate="375483545.70008099">
+                                    <!--2012-11-24 20:59:05 +0000-->
+                                </date>
+                                <timeZone key="timeZone" name="America/Los_Angeles">
+                                    <mutableData key="data">
+VFppZgAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAC5AAAABAAAABCepkign7sVkKCGKqChmveQ
+y4kaoNIj9HDSYSYQ1v50INiArZDa/tGg28CQENzes6DdqayQ3r6VoN+JjpDgnneg4WlwkOJ+WaDjSVKQ
+5F47oOUpNJDmR1gg5xJREOgnOiDo8jMQ6gccIOrSFRDr5v4g7LH3EO3G4CDukdkQ76/8oPBxuxDxj96g
+8n/BkPNvwKD0X6OQ9U+ioPY/hZD3L4Sg+CiiEPkPZqD6CIQQ+viDIPvoZhD82GUg/chIEP64RyD/qCoQ
+AJgpIAGIDBACeAsgA3EokARhJ6AFUQqQBkEJoAcw7JAHjUOgCRDOkAmtvyAK8LCQC+CvoAzZzRANwJGg
+DrmvEA+priAQmZEQEYmQIBJ5cxATaXIgFFlVEBVJVCAWOTcQFyk2IBgiU5AZCRggGgI1kBryNKAb4heQ
+HNIWoB3B+ZAesfigH6HbkCB2KyAhgb2QIlYNICNq2hAkNe8gJUq8ECYV0SAnKp4QJ/7toCkKgBAp3s+g
+KupiECu+saAs036QLZ6ToC6zYJAvfnWgMJNCkDFnkiAycySQM0d0IDRTBpA1J1YgNjLokDcHOCA4HAUQ
+OOcaIDn75xA6xvwgO9vJEDywGKA9u6sQPo/6oD+bjRBAb9ygQYSpkEJPvqBDZIuQRC+goEVEbZBF89Mg
+Ry2KEEfTtSBJDWwQSbOXIErtThBLnLOgTNZqkE18laBOtkyQT1x3oFCWLpBRPFmgUnYQkFMcO6BUVfKQ
+VPwdoFY11JBW5TogWB7xEFjFHCBZ/tMQWqT+IFvetRBchOAgXb6XEF5kwiBfnnkQYE3eoGGHlZBiLcCg
+Y2d3kGQNoqBlR1mQZe2EoGcnO5BnzWagaQcdkGmtSKBq5v+Qa5ZlIGzQHBBtdkcgbq/+EG9WKSBwj+AQ
+cTYLIHJvwhBzFe0gdE+kEHT/CaB2OMCQdt7roHgYopB4vs2gefiEkHqer6B72GaQfH6RoH24SJB+XnOg
+f5gqkAABAAECAwEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEAAQABAAEA
+AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
+</mutableData>
+                                </timeZone>
+                            </datePicker>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="7z7-tn-SGV" firstAttribute="leading" secondItem="T2V-Fw-Bzt" secondAttribute="leading" type="default" id="00J-Wc-Uok"/>
+                            <constraint firstItem="hre-25-m6n" firstAttribute="leading" secondItem="T2V-Fw-Bzt" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="0GS-Yy-Tcs"/>
                             <constraint firstItem="7z7-tn-SGV" firstAttribute="trailing" secondItem="T2V-Fw-Bzt" secondAttribute="trailing" type="default" id="2uG-gd-0So"/>
+                            <constraint firstAttribute="trailing" secondItem="ZBu-fe-Kle" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="3iR-Vs-LEb"/>
+                            <constraint firstAttribute="trailing" secondItem="vDL-qV-nhC" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="87l-Gl-i4L"/>
+                            <constraint firstItem="vDL-qV-nhC" firstAttribute="top" secondItem="T2V-Fw-Bzt" secondAttribute="top" constant="142" id="8WQ-8L-gTF"/>
+                            <constraint firstItem="ny2-U9-MhH" firstAttribute="bottom" secondItem="T2V-Fw-Bzt" secondAttribute="bottom" type="default" id="JUa-wP-Ic8"/>
+                            <constraint firstItem="ny2-U9-MhH" firstAttribute="leading" secondItem="T2V-Fw-Bzt" secondAttribute="leading" type="default" id="Lav-Qd-CTh"/>
+                            <constraint firstItem="nBH-Ax-7hP" firstAttribute="leading" secondItem="T2V-Fw-Bzt" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="VDG-sC-Efr"/>
+                            <constraint firstItem="hre-25-m6n" firstAttribute="top" secondItem="ZBu-fe-Kle" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="bEK-Bd-FPd"/>
+                            <constraint firstItem="ZBu-fe-Kle" firstAttribute="top" secondItem="T2V-Fw-Bzt" secondAttribute="top" constant="80" id="bNG-p8-4ap"/>
+                            <constraint firstItem="ny2-U9-MhH" firstAttribute="trailing" secondItem="T2V-Fw-Bzt" secondAttribute="trailing" type="default" id="eae-eI-7Bb"/>
+                            <constraint firstItem="FfN-JH-iMZ" firstAttribute="leading" secondItem="T2V-Fw-Bzt" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="esv-lX-YbN"/>
+                            <constraint firstItem="ZBu-fe-Kle" firstAttribute="leading" secondItem="T2V-Fw-Bzt" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="f3J-mo-vys"/>
                             <constraint firstItem="7z7-tn-SGV" firstAttribute="top" secondItem="T2V-Fw-Bzt" secondAttribute="top" type="default" id="hrA-aZ-kD9"/>
+                            <constraint firstItem="FfN-JH-iMZ" firstAttribute="top" secondItem="T2V-Fw-Bzt" secondAttribute="top" constant="56" id="qhY-L2-qJc"/>
+                            <constraint firstAttribute="trailing" secondItem="nBH-Ax-7hP" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="raU-Bk-43P"/>
+                            <constraint firstAttribute="bottom" secondItem="nBH-Ax-7hP" secondAttribute="bottom" constant="217" id="uHn-rT-k2K"/>
+                            <constraint firstItem="vDL-qV-nhC" firstAttribute="leading" secondItem="T2V-Fw-Bzt" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="xnw-DH-GH7"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="d97-t2-m6o" appends="YES" id="Toa-r5-XAw"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="eventDatePicker" destination="ny2-U9-MhH" id="19F-CH-jKK"/>
+                        <outlet property="eventLocation" destination="vDL-qV-nhC" id="IFF-ay-iWC"/>
+                        <outlet property="eventTitle" destination="ZBu-fe-Kle" id="aED-es-4ka"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jrv-V9-Goz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="d97-t2-m6o">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="9fh-Kx-PLZ" id="m8B-Ru-xOR"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="852" y="538"/>
         </scene>
@@ -392,7 +495,12 @@
         <class className="CreateEventViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/CreateEventViewController.h"/>
             <relationships>
+                <relationship kind="action" name="dismissKeyboard:"/>
                 <relationship kind="action" name="dsimissCreateEventView:"/>
+                <relationship kind="action" name="saveEvent:"/>
+                <relationship kind="outlet" name="eventDatePicker" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="eventLocation" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="eventTitle" candidateClass="UITextField"/>
             </relationships>
         </class>
         <class className="EventCell" superclassName="UITableViewCell">

@@ -10,6 +10,12 @@
 
 @interface CreateEventViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UITextField *eventTitle;
+@property (weak, nonatomic) IBOutlet UITextField *eventLocation;
+@property (weak, nonatomic) IBOutlet UIDatePicker *eventDatePicker;
+
+- (IBAction)dismissKeyboard:(id)sender;
 - (IBAction)dsimissCreateEventView:(id)sender;
+- (IBAction)saveEvent:(id)sender;
 
 @end
