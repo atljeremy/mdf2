@@ -53,7 +53,7 @@
     localNotif.timeZone = [NSTimeZone defaultTimeZone];
     
     localNotif.alertBody = @"Don't forget to return to the application and check your upcoming events. Do it now by tapping this notification.";
-    localNotif.alertAction = @"View Your Upcoming Events";
+    localNotif.alertAction = @"View Events";
     localNotif.soundName = UILocalNotificationDefaultSoundName;
     
     [[UIApplication sharedApplication] scheduleLocalNotification:localNotif];
