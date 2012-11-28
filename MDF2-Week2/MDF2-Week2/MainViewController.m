@@ -8,6 +8,7 @@
 
 #import "MainViewController.h"
 #import "MainTableCell.h"
+#import "TweetDetailsViewController.h"
 
 #define kMainTableViewCellIdentifier @"MainTableViewCell"
 #define kMainTableCellHeight 100
@@ -164,10 +165,11 @@
         
         // Get the tweet date
         NSString* tempTweetDate = [tweetObj objectForKey:kTweetCreatedAtKey];
-        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc]init];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"eee MMM dd HH:mm:ss ZZZZ yyyy"];
+        NSDate *origDate = [dateFormatter dateFromString:tempTweetDate];
         [dateFormatter setDateFormat:@"MM/dd/yy h:mm a"];
-        NSDate *date = [dateFormatter dateFromString:tempTweetDate];
-        tweetDate = [dateFormatter stringFromDate:date];
+        tweetDate = [dateFormatter stringFromDate:origDate];
         
         // Get the "user" object
         NSDictionary* userObj = [tweetObj objectForKey:kTweetUserObjectKey];
@@ -200,18 +202,40 @@
 #pragma mark - Table view delegate
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return kMainTableCellHeight;
+    
+    NSDictionary* tweetObj = [self.jsonResponse objectAtIndex:indexPath.row];
+    NSString* tweetText = @"";
+    if (tweetObj) {
+        // Get the tweet text
+        tweetText = [tweetObj objectForKey:kTweetTextKey];
+    }
+    
+    int height = 0;
+    if (tweetText) {
+        height = [NSString getHeightForString:tweetText font:[UIFont fontWithName:@"Arial" size:14]];
+    } else {
+        return kMainTableCellHeight;
+    }
+    
+    return kMainTableCellHeight + height;
+    
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    [self performSegueWithIdentifier:kPushTweetDetailsView sender:self];
+}
+
+#pragma mark - Prepare For Segue
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([segue.identifier isEqualToString:kPushTweetDetailsView]) {
+        NSDictionary* tweetObj = [self.jsonResponse objectAtIndex:[[self.tableView indexPathForSelectedRow] row]];
+        if (tweetObj) {
+            [(TweetDetailsViewController*)segue.destinationViewController setTweetObj:tweetObj];
+        }
+    }
 }
 
 #pragma mark - Load Twitter Timeline Async

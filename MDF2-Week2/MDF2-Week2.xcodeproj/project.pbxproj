@@ -19,6 +19,8 @@
 		3F5B81851662DC2700B6B89F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F5B81831662DC2700B6B89F /* MainStoryboard.storyboard */; };
 		3F5B81941662DCE500B6B89F /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5B81931662DCE500B6B89F /* MainViewController.m */; };
 		3F5B81991662DDBC00B6B89F /* MainTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F5B81981662DDBC00B6B89F /* MainTableCell.m */; };
+		3F834CDC1665B8610058097B /* NSString+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F834CDB1665B8610058097B /* NSString+Additions.m */; };
+		3F834CEA1665D2820058097B /* TweetDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F834CE91665D2820058097B /* TweetDetailsViewController.m */; };
 		3FAD68EF16644B89004A7F75 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FAD68EE16644B89004A7F75 /* Constants.m */; };
 		3FAD68F5166450D0004A7F75 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAD68F4166450D0004A7F75 /* QuartzCore.framework */; };
 		3FAD68FF166466BF004A7F75 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAD68FE166466BF004A7F75 /* Accounts.framework */; };
@@ -79,6 +81,10 @@
 		3F5B81931662DCE500B6B89F /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		3F5B81971662DDBC00B6B89F /* MainTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableCell.h; sourceTree = "<group>"; };
 		3F5B81981662DDBC00B6B89F /* MainTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableCell.m; sourceTree = "<group>"; };
+		3F834CDA1665B8610058097B /* NSString+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Additions.h"; sourceTree = "<group>"; };
+		3F834CDB1665B8610058097B /* NSString+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Additions.m"; sourceTree = "<group>"; };
+		3F834CE81665D2820058097B /* TweetDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TweetDetailsViewController.h; sourceTree = "<group>"; };
+		3F834CE91665D2820058097B /* TweetDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TweetDetailsViewController.m; sourceTree = "<group>"; };
 		3FAD68ED16644B89004A7F75 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		3FAD68EE16644B89004A7F75 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		3FAD68F4166450D0004A7F75 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -169,6 +175,7 @@
 		3F5B818E1662DC7A00B6B89F /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				3F834CD91665B8470058097B /* Additions */,
 				3FAD68EB16644B70004A7F75 /* Constants */,
 				3F5B81901662DC8600B6B89F /* Application */,
 				3F5B818F1662DC8000B6B89F /* View Controllers */,
@@ -180,6 +187,7 @@
 		3F5B818F1662DC8000B6B89F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3F834CE71665D2710058097B /* Tweet Details */,
 				3F5B81911662DC8F00B6B89F /* Main */,
 			);
 			name = "View Controllers";
@@ -218,6 +226,24 @@
 				3F5B81981662DDBC00B6B89F /* MainTableCell.m */,
 			);
 			name = Main;
+			sourceTree = "<group>";
+		};
+		3F834CD91665B8470058097B /* Additions */ = {
+			isa = PBXGroup;
+			children = (
+				3F834CDA1665B8610058097B /* NSString+Additions.h */,
+				3F834CDB1665B8610058097B /* NSString+Additions.m */,
+			);
+			name = Additions;
+			sourceTree = "<group>";
+		};
+		3F834CE71665D2710058097B /* Tweet Details */ = {
+			isa = PBXGroup;
+			children = (
+				3F834CE81665D2820058097B /* TweetDetailsViewController.h */,
+				3F834CE91665D2820058097B /* TweetDetailsViewController.m */,
+			);
+			name = "Tweet Details";
 			sourceTree = "<group>";
 		};
 		3FAD68EB16644B70004A7F75 /* Constants */ = {
@@ -353,6 +379,8 @@
 				3F5B81941662DCE500B6B89F /* MainViewController.m in Sources */,
 				3F5B81991662DDBC00B6B89F /* MainTableCell.m in Sources */,
 				3FAD68EF16644B89004A7F75 /* Constants.m in Sources */,
+				3F834CDC1665B8610058097B /* NSString+Additions.m in Sources */,
+				3F834CEA1665D2820058097B /* TweetDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
