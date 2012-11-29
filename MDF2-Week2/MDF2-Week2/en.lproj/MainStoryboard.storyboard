@@ -247,7 +247,9 @@
                         <outlet property="actualName" destination="QnK-y7-zbr" id="8R7-uS-C0t"/>
                         <outlet property="description" destination="N8q-9G-4SU" id="eYq-6J-luz"/>
                         <outlet property="followers" destination="1dM-Ev-yAo" id="zyL-3F-VaU"/>
+                        <outlet property="followersTitle" destination="0dl-fQ-GNx" id="1XN-A9-Oqp"/>
                         <outlet property="friends" destination="0p8-bS-EKg" id="Whv-EK-He7"/>
+                        <outlet property="friendsTitle" destination="a6P-SK-Q8P" id="z85-Yx-ZbL"/>
                         <outlet property="username" destination="FkF-dH-Eeb" id="Vg2-ec-s7o"/>
                     </connections>
                 </viewController>
@@ -357,7 +359,9 @@
                 <relationship kind="outlet" name="actualName" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="description" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="followers" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="followersTitle" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="friends" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="friendsTitle" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="username" candidateClass="UILabel"/>
             </relationships>
         </class>

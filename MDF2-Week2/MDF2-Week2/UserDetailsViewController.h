@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *friends;
 @property (weak, nonatomic) IBOutlet UILabel *description;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+@property (weak, nonatomic) IBOutlet UILabel *followersTitle;
+@property (weak, nonatomic) IBOutlet UILabel *friendsTitle;
 
 - (IBAction)dsimissUserDetailsView:(id)sender;
 @end

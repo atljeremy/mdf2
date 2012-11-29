@@ -37,6 +37,13 @@
 }
 
 - (void)loadUserDetails {
+    self.username.hidden = YES;
+    self.actualName.hidden = YES;
+    self.followers.hidden = YES;
+    self.friends.hidden = YES;
+    self.description.hidden = YES;
+    self.followersTitle.hidden = YES;
+    self.friendsTitle.hidden = YES;
     [self.activityIndicator startAnimating];
     if ([SLComposeViewController isAvailableForServiceType:SLServiceTypeTwitter]) {
         
@@ -148,6 +155,13 @@
                                               otherButtonTitles:nil];
         [alert show];
     }
+    self.username.hidden = NO;
+    self.actualName.hidden = NO;
+    self.followers.hidden = NO;
+    self.friends.hidden = NO;
+    self.description.hidden = NO;
+    self.followersTitle.hidden = NO;
+    self.friendsTitle.hidden = NO;
     [self.activityIndicator stopAnimating];
 }
 
