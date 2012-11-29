@@ -11,8 +11,8 @@
 @interface MainViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 - (IBAction)composeTweet:(id)sender;
+- (IBAction)refreshTimeline:(id)sender;
 
 @end

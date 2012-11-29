@@ -11,5 +11,8 @@
 @interface TweetDetailsViewController : UIViewController
 
 @property (nonatomic, weak) NSDictionary* tweetObj;
+@property (weak, nonatomic) IBOutlet UILabel *username;
+@property (weak, nonatomic) IBOutlet UILabel *date;
+@property (weak, nonatomic) IBOutlet UILabel *tweetText;
 
 @end

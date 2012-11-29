@@ -15,6 +15,7 @@
 
 @interface MainViewController ()
 @property (nonatomic, strong) NSMutableArray* jsonResponse;
+@property (nonatomic, strong) UIAlertView* loadingAlert;
 @end
 
 @implementation MainViewController
@@ -33,17 +34,13 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
+    
+    [self refreshTimeline:self];
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    
-    [self.activityIndicator startAnimating];
-    dispatch_queue_t imageQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
-    dispatch_async(imageQueue, ^{
-        [self checkTwitterStatus];
-    });
 }
 
 - (void)didReceiveMemoryWarning
@@ -82,7 +79,7 @@
                               NSLog(@"Response Code: %i", [urlResponse statusCode]);
                              
                               dispatch_async(dispatch_get_main_queue(), ^{
-                                  [self.activityIndicator stopAnimating];
+                                  [self hideLoadingAlert];
                                   [self.tableView reloadData];
                               });
                               
@@ -91,7 +88,7 @@
                      } else {
                          
                           dispatch_async(dispatch_get_main_queue(), ^{
-                              [self.activityIndicator stopAnimating];
+                              [self hideLoadingAlert];
                               [self showTwitterAccountError];
                           });
                          
@@ -100,7 +97,7 @@
                  } else {
                      
                       dispatch_async(dispatch_get_main_queue(), ^{
-                          [self.activityIndicator stopAnimating];
+                          [self hideLoadingAlert];
                           NSLog(@"Permission Not Granted");
                           NSLog(@"Error: %@", error);
                       });
@@ -111,7 +108,7 @@
         
     } else {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [self.activityIndicator stopAnimating];
+            [self hideLoadingAlert];
             [self showTwitterAccountError];
         });
     }
@@ -125,6 +122,37 @@
     [self presentViewController:composeController
                        animated:YES
                      completion:nil];
+}
+
+- (IBAction)refreshTimeline:(id)sender {
+    [self showLoadingAlert];
+    dispatch_queue_t imageQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(imageQueue, ^{
+        [self checkTwitterStatus];
+    });
+
+}
+
+- (void)showLoadingAlert {
+    if (!self.loadingAlert) {
+        self.loadingAlert = [[UIAlertView alloc] initWithTitle:@"Loading"
+                                                       message:@"\n\n"
+                                                      delegate:nil
+                                             cancelButtonTitle:nil
+                                             otherButtonTitles:nil];
+        
+        UIActivityIndicatorView *actIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+        actIndicator.center = CGPointMake(139.5, 75.5); // .5 so it doesn't blur
+        [self.loadingAlert addSubview:actIndicator];
+        [actIndicator startAnimating];
+    }
+    [self.loadingAlert show];
+}
+
+- (void)hideLoadingAlert {
+    if (self.loadingAlert) {
+        [self.loadingAlert dismissWithClickedButtonIndex:0 animated:YES];
+    }
 }
 
 - (void)showTwitterAccountError {
@@ -235,36 +263,6 @@
         if (tweetObj) {
             [(TweetDetailsViewController*)segue.destinationViewController setTweetObj:tweetObj];
         }
-    }
-}
-
-#pragma mark - Load Twitter Timeline Async
-
-- (void)loadTwitterTimelineAsync {
-    NSError *error = nil;
-    NSData *jsonData = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"http://url.to.your.json"]];
-    
-    if (jsonData) {
-        
-        id jsonObjects = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
-        
-        if (error) {
-            NSLog(@"error is %@", [error localizedDescription]);
-            
-            // Handle Error and return
-            return;
-            
-        }
-        
-        NSArray *keys = [jsonObjects allKeys];
-        
-        // values in foreach loop
-        for (NSString *key in keys) {
-            NSLog(@"%@ is %@",key, [jsonObjects objectForKey:key]);
-        }
-        
-    } else {
-        // Handle Error
     }
 }
 
