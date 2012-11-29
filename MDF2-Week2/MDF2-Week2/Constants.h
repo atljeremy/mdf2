@@ -14,6 +14,11 @@
 #define kTweetUserScreenNameKey @"screen_name"
 #define kTweetUserProfileImageURLKey @"profile_image_url"
 
+#define kUserNameKey @"name"
+#define kUserFollowersCountKey @"followers_count"
+#define kUserFriendsCountKey @"friends_count"
+#define kUserDescriptionKey @"description"
+
 #define kPushTweetDetailsView @"PushTweetDetailsView"
 
 @interface Constants : NSObject

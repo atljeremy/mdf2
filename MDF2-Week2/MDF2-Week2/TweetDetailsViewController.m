@@ -32,29 +32,27 @@
         NSString* tweetDate = @"";
         NSString* tweetUser = @"";
         NSURL* userImageURL = nil;
-        if (self.tweetObj) {
             
-            // Get the tweet text
-            tweetText = [self.tweetObj objectForKey:kTweetTextKey];
+        // Get the tweet text
+        tweetText = [self.tweetObj objectForKey:kTweetTextKey];
+        
+        // Get the tweet date
+        NSString* tempTweetDate = [self.tweetObj objectForKey:kTweetCreatedAtKey];
+        NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+        [dateFormatter setDateFormat:@"eee MMM dd HH:mm:ss ZZZZ yyyy"];
+        NSDate *origDate = [dateFormatter dateFromString:tempTweetDate];
+        [dateFormatter setDateFormat:@"MM/dd/yy h:mm a"];
+        tweetDate = [dateFormatter stringFromDate:origDate];
+        
+        // Get the "user" object
+        NSDictionary* userObj = [self.tweetObj objectForKey:kTweetUserObjectKey];
+        if (userObj) {
             
-            // Get the tweet date
-            NSString* tempTweetDate = [self.tweetObj objectForKey:kTweetCreatedAtKey];
-            NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-            [dateFormatter setDateFormat:@"eee MMM dd HH:mm:ss ZZZZ yyyy"];
-            NSDate *origDate = [dateFormatter dateFromString:tempTweetDate];
-            [dateFormatter setDateFormat:@"MM/dd/yy h:mm a"];
-            tweetDate = [dateFormatter stringFromDate:origDate];
+            // Get the username
+            tweetUser = [userObj objectForKey:kTweetUserScreenNameKey];
             
-            // Get the "user" object
-            NSDictionary* userObj = [self.tweetObj objectForKey:kTweetUserObjectKey];
-            if (userObj) {
-                
-                // Get the username
-                tweetUser = [userObj objectForKey:kTweetUserScreenNameKey];
-                
-                userImageURL = [NSURL URLWithString:[userObj objectForKey:kTweetUserProfileImageURLKey]];
-                
-            }
+            userImageURL = [NSURL URLWithString:[userObj objectForKey:kTweetUserProfileImageURLKey]];
+            
         }
         
         if (tweetText.length > 0) {

@@ -9,6 +9,7 @@
 #import "MainViewController.h"
 #import "MainTableCell.h"
 #import "TweetDetailsViewController.h"
+#import "UserDetailsViewController.h"
 
 #define kMainTableViewCellIdentifier @"MainTableViewCell"
 #define kMainTableCellHeight 100
@@ -117,7 +118,7 @@
 - (IBAction)composeTweet:(id)sender {
     SLComposeViewController *composeController = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
     
-    [composeController setInitialText:@"This is my awesome tweet!"];
+    [composeController setInitialText:@"Posted from my awesome MDF2 application!"];
     
     [self presentViewController:composeController
                        animated:YES

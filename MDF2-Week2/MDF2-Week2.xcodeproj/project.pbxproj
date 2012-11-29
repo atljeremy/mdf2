@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F1B516B166712D800AF59EE /* 111-user.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1B5169166712D800AF59EE /* 111-user.png */; };
+		3F1B516C166712D800AF59EE /* 111-user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1B516A166712D800AF59EE /* 111-user@2x.png */; };
+		3F1B51711667136B00AF59EE /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1B51701667136B00AF59EE /* UserDetailsViewController.m */; };
 		3F5B816C1662DC2700B6B89F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5B816B1662DC2700B6B89F /* UIKit.framework */; };
 		3F5B816E1662DC2700B6B89F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5B816D1662DC2700B6B89F /* Foundation.framework */; };
 		3F5B81701662DC2700B6B89F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5B816F1662DC2700B6B89F /* CoreGraphics.framework */; };
@@ -63,6 +66,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3F1B5169166712D800AF59EE /* 111-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "111-user.png"; path = "MDF2-Week2/Resources/111-user.png"; sourceTree = "<group>"; };
+		3F1B516A166712D800AF59EE /* 111-user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "111-user@2x.png"; path = "MDF2-Week2/Resources/111-user@2x.png"; sourceTree = "<group>"; };
+		3F1B516F1667136B00AF59EE /* UserDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsViewController.h; sourceTree = "<group>"; };
+		3F1B51701667136B00AF59EE /* UserDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsViewController.m; sourceTree = "<group>"; };
 		3F5B81671662DC2700B6B89F /* MDF2-Week2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MDF2-Week2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F5B816B1662DC2700B6B89F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3F5B816D1662DC2700B6B89F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -115,6 +122,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F1B516D1667134900AF59EE /* User Details */ = {
+			isa = PBXGroup;
+			children = (
+				3F1B516F1667136B00AF59EE /* UserDetailsViewController.h */,
+				3F1B51701667136B00AF59EE /* UserDetailsViewController.m */,
+			);
+			name = "User Details";
+			sourceTree = "<group>";
+		};
 		3F5B815C1662DC2700B6B89F = {
 			isa = PBXGroup;
 			children = (
@@ -187,6 +203,7 @@
 		3F5B818F1662DC8000B6B89F /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3F1B516D1667134900AF59EE /* User Details */,
 				3F834CE71665D2710058097B /* Tweet Details */,
 				3F5B81911662DC8F00B6B89F /* Main */,
 			);
@@ -268,6 +285,8 @@
 		3FAD694016647C93004A7F75 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3F1B5169166712D800AF59EE /* 111-user.png */,
+				3F1B516A166712D800AF59EE /* 111-user@2x.png */,
 				3FAD694116647CEB004A7F75 /* placeholder.png */,
 				3FAD694216647CEB004A7F75 /* placeholder@2x.png */,
 			);
@@ -364,6 +383,8 @@
 				3F5B81851662DC2700B6B89F /* MainStoryboard.storyboard in Resources */,
 				3FAD694316647CEB004A7F75 /* placeholder.png in Resources */,
 				3FAD694416647CEB004A7F75 /* placeholder@2x.png in Resources */,
+				3F1B516B166712D800AF59EE /* 111-user.png in Resources */,
+				3F1B516C166712D800AF59EE /* 111-user@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +402,7 @@
 				3FAD68EF16644B89004A7F75 /* Constants.m in Sources */,
 				3F834CDC1665B8610058097B /* NSString+Additions.m in Sources */,
 				3F834CEA1665D2820058097B /* TweetDetailsViewController.m in Sources */,
+				3F1B51711667136B00AF59EE /* UserDetailsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
