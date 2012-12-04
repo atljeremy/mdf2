@@ -10,6 +10,8 @@
 		3F1B516B166712D800AF59EE /* 111-user.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1B5169166712D800AF59EE /* 111-user.png */; };
 		3F1B516C166712D800AF59EE /* 111-user@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1B516A166712D800AF59EE /* 111-user@2x.png */; };
 		3F1B51711667136B00AF59EE /* UserDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F1B51701667136B00AF59EE /* UserDetailsViewController.m */; };
+		3F1EC93B16683C8400966568 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1EC93A16683C8400966568 /* Icon.png */; };
+		3F1EC93D16683C8600966568 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F1EC93C16683C8600966568 /* Icon@2x.png */; };
 		3F5B816C1662DC2700B6B89F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5B816B1662DC2700B6B89F /* UIKit.framework */; };
 		3F5B816E1662DC2700B6B89F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5B816D1662DC2700B6B89F /* Foundation.framework */; };
 		3F5B81701662DC2700B6B89F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F5B816F1662DC2700B6B89F /* CoreGraphics.framework */; };
@@ -70,6 +72,8 @@
 		3F1B516A166712D800AF59EE /* 111-user@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "111-user@2x.png"; path = "MDF2-Week2/Resources/111-user@2x.png"; sourceTree = "<group>"; };
 		3F1B516F1667136B00AF59EE /* UserDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserDetailsViewController.h; sourceTree = "<group>"; };
 		3F1B51701667136B00AF59EE /* UserDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserDetailsViewController.m; sourceTree = "<group>"; };
+		3F1EC93A16683C8400966568 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		3F1EC93C16683C8600966568 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		3F5B81671662DC2700B6B89F /* MDF2-Week2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MDF2-Week2.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F5B816B1662DC2700B6B89F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3F5B816D1662DC2700B6B89F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -285,6 +289,8 @@
 		3FAD694016647C93004A7F75 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3F1EC93C16683C8600966568 /* Icon@2x.png */,
+				3F1EC93A16683C8400966568 /* Icon.png */,
 				3F1B5169166712D800AF59EE /* 111-user.png */,
 				3F1B516A166712D800AF59EE /* 111-user@2x.png */,
 				3FAD694116647CEB004A7F75 /* placeholder.png */,
@@ -385,6 +391,8 @@
 				3FAD694416647CEB004A7F75 /* placeholder@2x.png in Resources */,
 				3F1B516B166712D800AF59EE /* 111-user.png in Resources */,
 				3F1B516C166712D800AF59EE /* 111-user@2x.png in Resources */,
+				3F1EC93B16683C8400966568 /* Icon.png in Resources */,
+				3F1EC93D16683C8600966568 /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

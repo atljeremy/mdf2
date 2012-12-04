@@ -65,7 +65,8 @@
                      if (accounts && accounts.count > 0) {
                          
                          twitterAccount = [accounts lastObject];
-                         NSURL *twitterURL = [[NSURL alloc] initWithString:@"https://api.twitter.com/1.1/statuses/home_timeline.json"];
+                         NSString* url = [NSString stringWithFormat:@"https://api.twitter.com/1.1/statuses/user_timeline.json?screen_name=%@", twitterAccount.username];
+                         NSURL *twitterURL = [[NSURL alloc] initWithString:url];
                          
                          SLRequest *requestUsersTweets = [SLRequest requestForServiceType:SLServiceTypeTwitter
                                                                             requestMethod:SLRequestMethodGET
@@ -151,6 +152,7 @@
 }
 
 - (void)hideLoadingAlert {
+    [self.tableView scrollRectToVisible:CGRectMake(0, 0, 1, 1) animated:YES];
     if (self.loadingAlert) {
         [self.loadingAlert dismissWithClickedButtonIndex:0 animated:YES];
     }
