@@ -27,19 +27,14 @@
 {
     [super viewDidLoad];
     
+    self.imageReviewView.hidden = YES;
+    [self.imageReviewView removeFromSuperview];
+    
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypeCamera])
     {
-        self.imagePickerControl = [[UIImagePickerController alloc] init];
-        self.imagePickerControl.delegate = self;
-        self.imagePickerControl.sourceType = UIImagePickerControllerSourceTypeCamera;
-        self.imagePickerControl.mediaTypes = [NSArray arrayWithObjects:(NSString *) kUTTypeImage, nil];
-        self.imagePickerControl.allowsEditing = YES;
-        self.imagePickerControl.showsCameraControls = YES;
-        CGRect cameraFrame = self.imagePickerControl.view.frame;
-        cameraFrame.size.height = self.view.frame.size.height;
-        self.imagePickerControl.view.frame = cameraFrame;
+        [self createNewImagePicker];
         
-        [self.view addSubview:self.imagePickerControl.view];
+        
     } else {
         UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
                                                         message:@"Your deivce does not support taking photos."
@@ -48,13 +43,6 @@
                                               otherButtonTitles:@"Ok", nil];
         [alert show];
     }
-
-    UISwipeGestureRecognizer* swipeRecognizer = [[UISwipeGestureRecognizer alloc]
-                                                 initWithTarget:self
-                                                 action:@selector(dismissCamera:)];
-    swipeRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
-    [self.imagePickerControl.view addGestureRecognizer:swipeRecognizer];
-    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -69,20 +57,91 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void)createNewImagePicker {
+    if (self.imagePickerControl) {
+        for (UIGestureRecognizer* recongizer in self.imagePickerControl.view.gestureRecognizers) {
+            if (recongizer) {
+                [self.imagePickerControl.view removeGestureRecognizer:recongizer];
+            }
+        }
+        [self.imagePickerControl.view removeFromSuperview];
+        self.imagePickerControl = nil;
+    }
+    self.imagePickerControl = [[UIImagePickerController alloc] init];
+    self.imagePickerControl.delegate = self;
+    self.imagePickerControl.sourceType = UIImagePickerControllerSourceTypeCamera;
+    self.imagePickerControl.mediaTypes = [NSArray arrayWithObjects:(NSString *) kUTTypeImage, nil];
+    self.imagePickerControl.allowsEditing = YES;
+    self.imagePickerControl.showsCameraControls = YES;
+    CGRect cameraFrame = self.imagePickerControl.view.frame;
+    cameraFrame.size.height = self.view.frame.size.height;
+    self.imagePickerControl.view.frame = cameraFrame;
+    [self.view addSubview:self.imagePickerControl.view];
+    if (![self.view.subviews containsObject:self.imageReviewView]) {
+        [self.view addSubview:self.imageReviewView];
+    } else {
+        [self.view bringSubviewToFront:self.imageReviewView];
+    }
+    
+    UISwipeGestureRecognizer* swipeRecognizer = [[UISwipeGestureRecognizer alloc]
+                                                 initWithTarget:self
+                                                 action:@selector(dismissCamera:)];
+    swipeRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
+    [self.imagePickerControl.view addGestureRecognizer:swipeRecognizer];
+}
+
 - (IBAction)dismissCamera:(id)sender {
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
-#pragma mark - UIAlertViewDelegate
+- (IBAction)cancelPhotos:(id)sender {
+    [self hidePictureView];
+}
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    switch (buttonIndex) {
-        case 0:
-            [self.navigationController popToRootViewControllerAnimated:YES];
-            break;
-            
-        default:
-            break;
+- (IBAction)savePhotos:(id)sender {
+    UIImage* origImg = self.originalImageView.image;
+    UIImage* editedImg = self.editedImageView.image;
+    
+    if (origImg && editedImg) {
+        UIImageWriteToSavedPhotosAlbum(origImg,
+                                       self,
+                                       @selector(image:finishedSavingWithError:contextInfo:),
+                                       nil);
+        UIImageWriteToSavedPhotosAlbum(editedImg,
+                                       self,
+                                       @selector(image:finishedSavingWithError:contextInfo:),
+                                       nil);
+    }
+    
+    [self hidePictureView];
+}
+
+- (void)hidePictureView {
+    [self createNewImagePicker];
+    [UIView animateWithDuration:0.3 animations:^{
+        self.imageReviewView.alpha = 0.0;
+    } completion:^(BOOL finished){
+        self.imageReviewView.hidden = YES;
+    }];
+}
+
+- (void)showPictureViewWithOriginalImage:(UIImage*)origImg andEditedImage:(UIImage*)editedImg {
+    if (origImg && editedImg) {
+        self.originalImageView.image = origImg;
+        self.editedImageView.image = editedImg;
+
+        self.imageReviewView.alpha = 0.0;
+        self.imageReviewView.hidden = NO;
+        [UIView animateWithDuration:0.3 animations:^{
+            self.imageReviewView.alpha = 1.0;
+        }];
+    } else {
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
+                                                        message:@"An unexpected error has occurred while trying to display your new photo. Please try again."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil];
+        [alert show];
     }
 }
 
@@ -92,15 +151,11 @@
 {
     NSLog(@"INFO: %@", info);
     
-    UIImage* image = [info objectForKey:UIImagePickerControllerOriginalImage];
+    UIImage* origImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    UIImage* editedImage = [info objectForKey:UIImagePickerControllerEditedImage];
     
-//    [self showPictureView];
-//    self.picture.image = image;
-    
-    UIImageWriteToSavedPhotosAlbum(image,
-                                   self,
-                                   @selector(image:finishedSavingWithError:contextInfo:),
-                                   nil);
+    [self showPictureViewWithOriginalImage:origImage
+                            andEditedImage:editedImage];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker
@@ -108,12 +163,12 @@
     [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
--(void)image:(UIImage *)image finishedSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
+- (void)image:(UIImage *)image finishedSavingWithError:(NSError *)error contextInfo:(void *)contextInfo
 {
     UIAlertView *alert = [[UIAlertView alloc]
                           initWithTitle:@""
                           message:@""
-                          delegate:self
+                          delegate:nil
                           cancelButtonTitle:@"Ok"
                           otherButtonTitles:nil];
     
@@ -122,11 +177,10 @@
         [alert setMessage:@"Failed to save image"];
     } else {
         [alert setTitle:@"Save Successful!"];
-        [alert setMessage:@"Saved original and edited images to your photo album"];
+        [alert setMessage:@"Saved image to your photo album"];
     }
     
     [alert show];
 }
-
 
 @end

@@ -12,5 +12,12 @@
 @interface CameraViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate, UIAlertViewDelegate>
 
 @property (strong, nonatomic) UIImagePickerController* imagePickerControl;
+@property (weak, nonatomic) IBOutlet UIView *imageReviewView;
+@property (weak, nonatomic) IBOutlet UIImageView *originalImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *editedImageView;
+
+- (IBAction)cancelPhotos:(id)sender;
+- (IBAction)savePhotos:(id)sender;
+- (IBAction)dismissCamera:(id)sender;
 
 @end
