@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MobileCoreServices/MobileCoreServices.h>
 
-@interface VideoCameraViewController : UIViewController
+@interface VideoCameraViewController : UIViewController <UINavigationControllerDelegate, UIImagePickerControllerDelegate>
+
+@property (strong, nonatomic) UIImagePickerController* imagePickerControl;
+@property (weak, nonatomic) IBOutlet UIView *videoReviewView;
+
+- (IBAction)dismissCamera:(id)sender;
+- (IBAction)cancelVideo:(id)sender;
+- (IBAction)saveVideo:(id)sender;
 
 @end

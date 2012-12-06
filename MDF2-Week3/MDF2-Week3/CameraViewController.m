@@ -34,7 +34,6 @@
     {
         [self createNewImagePicker];
         
-        
     } else {
         UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
                                                         message:@"Your deivce does not support taking photos."
