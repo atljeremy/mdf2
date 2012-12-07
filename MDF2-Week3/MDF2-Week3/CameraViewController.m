@@ -34,6 +34,13 @@
     {
         [self createNewImagePicker];
         
+        UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Please Note"
+                                                        message:@"To exit the camera and return to the main screen, simply swipe from left to right anywhere on the screen at anytime."
+                                                       delegate:nil
+                                              cancelButtonTitle:@"Ok"
+                                              otherButtonTitles:nil];
+        [alert show]; 
+        
     } else {
         UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
                                                         message:@"Your deivce does not support taking photos."
@@ -44,7 +51,8 @@
     }
 }
 
-- (void)viewWillAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated
+{
     [super viewWillAppear:animated];
     
     [self.navigationController setNavigationBarHidden:YES animated:NO];
