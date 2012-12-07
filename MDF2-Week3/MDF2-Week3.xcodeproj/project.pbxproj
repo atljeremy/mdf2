@@ -8,6 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		3F070BBD1671579E008071CA /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F070BBC1671579E008071CA /* BaseViewController.m */; };
+		3F070C6716719B1C008071CA /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F070C6616719B1C008071CA /* Icon.png */; };
+		3F070C6916719B23008071CA /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F070C6816719B23008071CA /* Icon@2x.png */; };
+		3F070C7D16719C2A008071CA /* home-bg-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F070C7A16719C2A008071CA /* home-bg-568h@2x.png */; };
+		3F070C7E16719C2A008071CA /* home-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F070C7B16719C2A008071CA /* home-bg.png */; };
+		3F070C7F16719C2A008071CA /* home-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F070C7C16719C2A008071CA /* home-bg@2x.png */; };
 		3FE9F631166D7B5200D43506 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE9F630166D7B5200D43506 /* UIKit.framework */; };
 		3FE9F633166D7B5200D43506 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE9F632166D7B5200D43506 /* Foundation.framework */; };
 		3FE9F635166D7B5200D43506 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE9F634166D7B5200D43506 /* CoreGraphics.framework */; };
@@ -23,9 +28,6 @@
 		3FE9F659166D87CE00D43506 /* camera-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FE9F655166D87CE00D43506 /* camera-button@2x.png */; };
 		3FE9F65A166D87CE00D43506 /* vidcam-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FE9F656166D87CE00D43506 /* vidcam-button.png */; };
 		3FE9F65B166D87CE00D43506 /* vidcam-button@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FE9F657166D87CE00D43506 /* vidcam-button@2x.png */; };
-		3FE9F65F166D8B0400D43506 /* home-bg-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FE9F65C166D8B0400D43506 /* home-bg-568h@2x.png */; };
-		3FE9F660166D8B0400D43506 /* home-bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FE9F65D166D8B0400D43506 /* home-bg.png */; };
-		3FE9F661166D8B0400D43506 /* home-bg@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3FE9F65E166D8B0400D43506 /* home-bg@2x.png */; };
 		3FE9F66A166D8D1B00D43506 /* CameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9F669166D8D1B00D43506 /* CameraViewController.m */; };
 		3FE9F66D166D8D2C00D43506 /* VideoCameraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FE9F66C166D8D2C00D43506 /* VideoCameraViewController.m */; };
 		3FE9F66F166D8D6B00D43506 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE9F66E166D8D6B00D43506 /* MobileCoreServices.framework */; };
@@ -34,6 +36,11 @@
 /* Begin PBXFileReference section */
 		3F070BBB1671579E008071CA /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		3F070BBC1671579E008071CA /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		3F070C6616719B1C008071CA /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		3F070C6816719B23008071CA /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
+		3F070C7A16719C2A008071CA /* home-bg-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home-bg-568h@2x.png"; path = "Resources/home-bg-568h@2x.png"; sourceTree = "<group>"; };
+		3F070C7B16719C2A008071CA /* home-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home-bg.png"; path = "Resources/home-bg.png"; sourceTree = "<group>"; };
+		3F070C7C16719C2A008071CA /* home-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home-bg@2x.png"; path = "Resources/home-bg@2x.png"; sourceTree = "<group>"; };
 		3FE9F62C166D7B5200D43506 /* MDF2-Week3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MDF2-Week3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FE9F630166D7B5200D43506 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3FE9F632166D7B5200D43506 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -54,9 +61,6 @@
 		3FE9F655166D87CE00D43506 /* camera-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "camera-button@2x.png"; path = "Resources/camera-button@2x.png"; sourceTree = "<group>"; };
 		3FE9F656166D87CE00D43506 /* vidcam-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "vidcam-button.png"; path = "Resources/vidcam-button.png"; sourceTree = "<group>"; };
 		3FE9F657166D87CE00D43506 /* vidcam-button@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "vidcam-button@2x.png"; path = "Resources/vidcam-button@2x.png"; sourceTree = "<group>"; };
-		3FE9F65C166D8B0400D43506 /* home-bg-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home-bg-568h@2x.png"; path = "../../SnapTo/SnapTo/Resources/home-bg-568h@2x.png"; sourceTree = "<group>"; };
-		3FE9F65D166D8B0400D43506 /* home-bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home-bg.png"; path = "../../SnapTo/SnapTo/Resources/home-bg.png"; sourceTree = "<group>"; };
-		3FE9F65E166D8B0400D43506 /* home-bg@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "home-bg@2x.png"; path = "../../SnapTo/SnapTo/Resources/home-bg@2x.png"; sourceTree = "<group>"; };
 		3FE9F668166D8D1B00D43506 /* CameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraViewController.h; sourceTree = "<group>"; };
 		3FE9F669166D8D1B00D43506 /* CameraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraViewController.m; sourceTree = "<group>"; };
 		3FE9F66B166D8D2C00D43506 /* VideoCameraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoCameraViewController.h; sourceTree = "<group>"; };
@@ -144,9 +148,11 @@
 		3FE9F653166D7BD400D43506 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3FE9F65C166D8B0400D43506 /* home-bg-568h@2x.png */,
-				3FE9F65D166D8B0400D43506 /* home-bg.png */,
-				3FE9F65E166D8B0400D43506 /* home-bg@2x.png */,
+				3F070C7A16719C2A008071CA /* home-bg-568h@2x.png */,
+				3F070C7B16719C2A008071CA /* home-bg.png */,
+				3F070C7C16719C2A008071CA /* home-bg@2x.png */,
+				3F070C6816719B23008071CA /* Icon@2x.png */,
+				3F070C6616719B1C008071CA /* Icon.png */,
 				3FE9F654166D87CE00D43506 /* camera-button.png */,
 				3FE9F655166D87CE00D43506 /* camera-button@2x.png */,
 				3FE9F656166D87CE00D43506 /* vidcam-button.png */,
@@ -272,9 +278,11 @@
 				3FE9F659166D87CE00D43506 /* camera-button@2x.png in Resources */,
 				3FE9F65A166D87CE00D43506 /* vidcam-button.png in Resources */,
 				3FE9F65B166D87CE00D43506 /* vidcam-button@2x.png in Resources */,
-				3FE9F65F166D8B0400D43506 /* home-bg-568h@2x.png in Resources */,
-				3FE9F660166D8B0400D43506 /* home-bg.png in Resources */,
-				3FE9F661166D8B0400D43506 /* home-bg@2x.png in Resources */,
+				3F070C6716719B1C008071CA /* Icon.png in Resources */,
+				3F070C6916719B23008071CA /* Icon@2x.png in Resources */,
+				3F070C7D16719C2A008071CA /* home-bg-568h@2x.png in Resources */,
+				3F070C7E16719C2A008071CA /* home-bg.png in Resources */,
+				3F070C7F16719C2A008071CA /* home-bg@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
