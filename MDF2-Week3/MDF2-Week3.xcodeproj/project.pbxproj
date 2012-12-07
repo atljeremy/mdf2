@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F070BBD1671579E008071CA /* BaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F070BBC1671579E008071CA /* BaseViewController.m */; };
 		3FE9F631166D7B5200D43506 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE9F630166D7B5200D43506 /* UIKit.framework */; };
 		3FE9F633166D7B5200D43506 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE9F632166D7B5200D43506 /* Foundation.framework */; };
 		3FE9F635166D7B5200D43506 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FE9F634166D7B5200D43506 /* CoreGraphics.framework */; };
@@ -31,6 +32,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F070BBB1671579E008071CA /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
+		3F070BBC1671579E008071CA /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
 		3FE9F62C166D7B5200D43506 /* MDF2-Week3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MDF2-Week3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FE9F630166D7B5200D43506 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3FE9F632166D7B5200D43506 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -76,6 +79,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F070BB91671577A008071CA /* Base View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3F070BBB1671579E008071CA /* BaseViewController.h */,
+				3F070BBC1671579E008071CA /* BaseViewController.m */,
+			);
+			name = "Base View Controller";
+			sourceTree = "<group>";
+		};
 		3FE9F621166D7B5200D43506 = {
 			isa = PBXGroup;
 			children = (
@@ -165,6 +177,7 @@
 		3FE9F664166D8CE400D43506 /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				3F070BB91671577A008071CA /* Base View Controller */,
 				3FE9F667166D8D0700D43506 /* Video Camera */,
 				3FE9F666166D8D0300D43506 /* Camera */,
 				3FE9F665166D8CFE00D43506 /* Main */,
@@ -277,6 +290,7 @@
 				3FE9F64D166D7B5300D43506 /* MainViewController.m in Sources */,
 				3FE9F66A166D8D1B00D43506 /* CameraViewController.m in Sources */,
 				3FE9F66D166D8D2C00D43506 /* VideoCameraViewController.m in Sources */,
+				3F070BBD1671579E008071CA /* BaseViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,6 +407,7 @@
 				3FE9F652166D7B5300D43506 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

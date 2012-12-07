@@ -37,7 +37,7 @@
         
     } else {
         UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Sorry!"
-                                                        message:@"Your deivce does not support taking photos."
+                                                        message:@"Your deivce does not support taking videos."
                                                        delegate:self
                                               cancelButtonTitle:nil
                                               otherButtonTitles:@"Ok", nil];
@@ -184,6 +184,13 @@
     }
     
     [alert show];
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 @end
