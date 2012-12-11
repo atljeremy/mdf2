@@ -98,10 +98,91 @@
                     <view key="view" contentMode="scaleToFill" id="Niw-jp-CnN">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="JME-sk-gB5">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="5aF-z5-6rK"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Movie Title Here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="vvp-4m-hfm">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="6tx-fY-XEI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <size key="shadowOffset" width="1" height="1"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" translatesAutoresizingMaskIntoConstraints="NO" id="zw1-Ya-EoM">
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="ShowtimeCell" id="ffD-mN-Fpk" customClass="ShowtimeCell">
+                                        <rect key="frame" x="0.0" y="46" width="320" height="46"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="10" y="1" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="1:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gil-na-fBX">
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="260" id="kCX-8L-gGf"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstItem="Gil-na-fBX" firstAttribute="centerX" secondItem="ffD-mN-Fpk" secondAttribute="centerX" type="default" id="MkZ-cv-F3Q"/>
+                                            <constraint firstItem="Gil-na-fBX" firstAttribute="top" secondItem="ffD-mN-Fpk" secondAttribute="top" constant="12" id="gAa-lC-3mg"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="showtime" destination="Gil-na-fBX" id="OeQ-TK-EJN"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWS-v6-0Mi">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="140" id="Q7l-aT-kXf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Watch Trailer">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="launchTrailer:" destination="vNH-VF-TrG" eventType="touchUpInside" id="akV-5D-c8T"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="JME-sk-gB5" firstAttribute="top" secondItem="Niw-jp-CnN" secondAttribute="top" constant="20" symbolic="YES" type="default" id="4Qi-S5-NUz"/>
+                            <constraint firstItem="zw1-Ya-EoM" firstAttribute="top" secondItem="iWS-v6-0Mi" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="7An-hn-1r5"/>
+                            <constraint firstItem="zw1-Ya-EoM" firstAttribute="trailing" secondItem="Niw-jp-CnN" secondAttribute="trailing" type="default" id="In7-f0-iXw"/>
+                            <constraint firstItem="zw1-Ya-EoM" firstAttribute="top" secondItem="JME-sk-gB5" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="LxP-mR-eRa"/>
+                            <constraint firstItem="vvp-4m-hfm" firstAttribute="leading" secondItem="JME-sk-gB5" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="PTZ-0y-SuW"/>
+                            <constraint firstItem="JME-sk-gB5" firstAttribute="leading" secondItem="Niw-jp-CnN" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="YMX-nY-kBK"/>
+                            <constraint firstItem="vvp-4m-hfm" firstAttribute="top" secondItem="Niw-jp-CnN" secondAttribute="top" constant="20" symbolic="YES" type="default" id="dN9-8j-2Rg"/>
+                            <constraint firstItem="zw1-Ya-EoM" firstAttribute="leading" secondItem="Niw-jp-CnN" secondAttribute="leading" type="default" id="dvI-x2-kQ2"/>
+                            <constraint firstItem="zw1-Ya-EoM" firstAttribute="bottom" secondItem="Niw-jp-CnN" secondAttribute="bottom" type="default" id="eiN-NR-U54"/>
+                            <constraint firstItem="iWS-v6-0Mi" firstAttribute="top" secondItem="vvp-4m-hfm" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="oRu-wa-K4f"/>
+                            <constraint firstAttribute="trailing" secondItem="vvp-4m-hfm" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="tc4-Y5-Tbx"/>
+                            <constraint firstItem="iWS-v6-0Mi" firstAttribute="leading" secondItem="JME-sk-gB5" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="zpJ-aV-vFT"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Movie Details" id="ShF-lz-jHE"/>
                     <connections>
+                        <outlet property="movieImage" destination="JME-sk-gB5" id="2Oj-4u-hKc"/>
+                        <outlet property="movieTitle" destination="vvp-4m-hfm" id="IfW-pM-kI3"/>
+                        <outlet property="showtimesTableView" destination="zw1-Ya-EoM" id="fqA-Ia-ZkU"/>
                         <segue destination="eNx-bf-55e" kind="push" identifier="PushMovieViewSegue" id="pof-n8-0cV"/>
                     </connections>
                 </viewController>
@@ -128,6 +209,12 @@
     <classes>
         <class className="DetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="launchTrailer:"/>
+                <relationship kind="outlet" name="movieImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="movieTitle" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="showtimesTableView" candidateClass="UITableView"/>
+            </relationships>
         </class>
         <class className="MainTableViewCell" superclassName="UITableViewCell">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/MainTableViewCell.h"/>
@@ -145,6 +232,12 @@
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="ShowtimeCell" superclassName="UITableViewCell">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ShowtimeCell.h"/>
+            <relationships>
+                <relationship kind="outlet" name="showtime" candidateClass="UILabel"/>
+            </relationships>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

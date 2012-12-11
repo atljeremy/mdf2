@@ -24,6 +24,7 @@
         movie.movieShowTimes = showTimes;
         movie.movieImage     = image;
         movie.movieTheater   = theater;
+        movie.movieTrailer   = trailerURL;
     }
     
     return movie;

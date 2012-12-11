@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F68403A1676C0B4000194AA /* ShowtimeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F6840391676C0B4000194AA /* ShowtimeCell.m */; };
+		3F6840581676D9CC000194AA /* tickets.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F6840561676D9CC000194AA /* tickets.png */; };
+		3F6840591676D9CC000194AA /* tickets@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F6840571676D9CC000194AA /* tickets@2x.png */; };
 		3FAA40C21675666100590DEC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAA40C11675666100590DEC /* UIKit.framework */; };
 		3FAA40C41675666100590DEC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAA40C31675666100590DEC /* Foundation.framework */; };
 		3FAA40C61675666100590DEC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FAA40C51675666100590DEC /* CoreGraphics.framework */; };
@@ -28,6 +31,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F6840381676C0B4000194AA /* ShowtimeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowtimeCell.h; sourceTree = "<group>"; };
+		3F6840391676C0B4000194AA /* ShowtimeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowtimeCell.m; sourceTree = "<group>"; };
+		3F6840561676D9CC000194AA /* tickets.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = tickets.png; path = "MDF2-Week4/Resources/tickets.png"; sourceTree = "<group>"; };
+		3F6840571676D9CC000194AA /* tickets@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "tickets@2x.png"; path = "MDF2-Week4/Resources/tickets@2x.png"; sourceTree = "<group>"; };
 		3FAA40BD1675666100590DEC /* MDF2-Week4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MDF2-Week4.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FAA40C11675666100590DEC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3FAA40C31675666100590DEC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -74,10 +81,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F6840551676D9B3000194AA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3F6840561676D9CC000194AA /* tickets.png */,
+				3F6840571676D9CC000194AA /* tickets@2x.png */,
+			);
+			name = Resources;
+			path = ..;
+			sourceTree = "<group>";
+		};
 		3FAA40B21675666100590DEC = {
 			isa = PBXGroup;
 			children = (
-				3FAA40F41675678000590DEC /* MediaPlayer.framework */,
 				3FAA40C71675666100590DEC /* MDF2-Week4 */,
 				3FAA40C01675666100590DEC /* Frameworks */,
 				3FAA40BE1675666100590DEC /* Products */,
@@ -95,6 +111,7 @@
 		3FAA40C01675666100590DEC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3FAA40F41675678000590DEC /* MediaPlayer.framework */,
 				3FAA40C11675666100590DEC /* UIKit.framework */,
 				3FAA40C31675666100590DEC /* Foundation.framework */,
 				3FAA40C51675666100590DEC /* CoreGraphics.framework */,
@@ -107,6 +124,7 @@
 			children = (
 				3FAA40E8167566A100590DEC /* Classes */,
 				3FAA40D91675666100590DEC /* MainStoryboard.storyboard */,
+				3F6840551676D9B3000194AA /* Resources */,
 				3FAA40C81675666100590DEC /* Supporting Files */,
 			);
 			path = "MDF2-Week4";
@@ -225,6 +243,8 @@
 			children = (
 				3FAA410416757DB600590DEC /* MainTableViewCell.h */,
 				3FAA410516757DB600590DEC /* MainTableViewCell.m */,
+				3F6840381676C0B4000194AA /* ShowtimeCell.h */,
+				3F6840391676C0B4000194AA /* ShowtimeCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -285,6 +305,8 @@
 				3FAA40D61675666100590DEC /* Default@2x.png in Resources */,
 				3FAA40D81675666100590DEC /* Default-568h@2x.png in Resources */,
 				3FAA40DB1675666100590DEC /* MainStoryboard.storyboard in Resources */,
+				3F6840581676D9CC000194AA /* tickets.png in Resources */,
+				3F6840591676D9CC000194AA /* tickets@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,6 +326,7 @@
 				3FAA40FF16756D4700590DEC /* Movie.m in Sources */,
 				3FAA410216756D6700590DEC /* Theater.m in Sources */,
 				3FAA410616757DB600590DEC /* MainTableViewCell.m in Sources */,
+				3F68403A1676C0B4000194AA /* ShowtimeCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,6 +443,7 @@
 				3FAA40E31675666100590DEC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

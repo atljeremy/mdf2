@@ -45,79 +45,79 @@
     
     self.movies = [NSArray arrayWithObjects:
                    [Movie movieWithName:@"All Roads Collide"
-                              showTimes:[NSArray arrayWithObjects:@"10:00", @"12:00", @"3:00", nil]
-                                  image:@"one"
-                             trailerURL:[NSURL URLWithString:@""]
+                              showTimes:[NSArray arrayWithObjects:@"10:00 AM", @"12:00 PM", @"3:00 PM", nil]
+                                  image:@"tickets"
+                             trailerURL:[NSURL URLWithString:@"http://trailers.apple.com/movies/universal/oblivion/oblivion-tlr1_h480p.mov"]
                              andTheater:luckyStar],
                    [Movie movieWithName:@"Up In The Air"
-                              showTimes:[NSArray arrayWithObjects:@"11:00", @"1:00", @"5:00", nil]
-                                  image:@"two"
-                             trailerURL:[NSURL URLWithString:@""]
+                              showTimes:[NSArray arrayWithObjects:@"11:00 AM", @"1:00 PM", @"5:00 PM", nil]
+                                  image:@"tickets"
+                             trailerURL:[NSURL URLWithString:@"http://trailers.apple.com/movies/paramount/startrekintodarkness/startrekintodarkness-usajj60sneak_h480p.mov"]
                              andTheater:luckyStar],
                    [Movie movieWithName:@"Down"
-                              showTimes:[NSArray arrayWithObjects:@"10:00", @"12:00", @"3:00", nil]
-                                  image:@"three"
-                             trailerURL:[NSURL URLWithString:@""]
+                              showTimes:[NSArray arrayWithObjects:@"1:00 PM", @"1:45 PM", @"6:00 PM", @"7:00 PM", nil]
+                                  image:@"tickets"
+                             trailerURL:[NSURL URLWithString:@"http://trailers.apple.com/movies/fox_searchlight/hitchcock/hitchcock-clip2_h480p.mov"]
                              andTheater:luckyStar],
                    [Movie movieWithName:@"It Could Happen"
-                              showTimes:[NSArray arrayWithObjects:@"10:00", @"12:00", @"3:00", nil]
-                                  image:@"four"
-                             trailerURL:[NSURL URLWithString:@""]
+                              showTimes:[NSArray arrayWithObjects:@"11:15 AM", @"2:00 PM", nil]
+                                  image:@"tickets"
+                             trailerURL:[NSURL URLWithString:@"http://trailers.apple.com/movies/independent/waitingforlightning/waitingforlightning-clip2_h480p.mov"]
                              andTheater:luckyStar],
                    [Movie movieWithName:@"Why Me?"
-                              showTimes:[NSArray arrayWithObjects:@"10:00", @"12:00", @"3:00", nil]
-                                  image:@"five"
-                             trailerURL:[NSURL URLWithString:@""]
+                              showTimes:[NSArray arrayWithObjects:@"11:45 AM", @"12:00 PM", @"1:00 PM", @"2:30 PM", @"5:00 PM", nil]
+                                  image:@"tickets"
+                             trailerURL:[NSURL URLWithString:@"http://trailers.apple.com/movies/magnolia_pictures/thesorcererandthewhitesnake/sorcererandthewhitesnake-tlr1_h480p.mov"]
                              andTheater:luckyStar],
-                   [Movie movieWithName:@"The Next"
-                              showTimes:[NSArray arrayWithObjects:@"10:00", @"12:00", @"3:00", nil]
-                                  image:@"six"
-                             trailerURL:[NSURL URLWithString:@""]
+                   [Movie movieWithName:@"The Next Big Thing"
+                              showTimes:[NSArray arrayWithObjects:@"9:00 AM", @"12:00 PM", @"3:00 PM", nil]
+                                  image:@"tickets"
+                             trailerURL:[NSURL URLWithString:@"http://trailers.apple.com/movies/dreamworks/thecroods/croods-tlr2_h480p.mov"]
                              andTheater:downTown],
                    [Movie movieWithName:@"Inside Out"
-                              showTimes:[NSArray arrayWithObjects:@"10:00", @"12:00", @"3:00", nil]
-                                  image:@"seven"
-                             trailerURL:[NSURL URLWithString:@""]
+                              showTimes:[NSArray arrayWithObjects:@"12:00 PM", @"6:00 PM", nil]
+                                  image:@"tickets"
+                             trailerURL:[NSURL URLWithString:@"http://trailers.apple.com/movies/independent/tchoupitoulas/tchoup-clip1_h480p.mov"]
                              andTheater:downTown],
                    [Movie movieWithName:@"The Walk"
-                              showTimes:[NSArray arrayWithObjects:@"10:00", @"12:00", @"3:00", nil]
-                                  image:@"eight"
-                             trailerURL:[NSURL URLWithString:@""]
+                              showTimes:[NSArray arrayWithObjects:@"1:00 PM", @"2:00 PM", @"2:45 PM", @"3:40 PM", @"5:15 PM", nil]
+                                  image:@"tickets"
+                             trailerURL:[NSURL URLWithString:@"http://trailers.apple.com/movies/independent/onlytheyoung/onlytheyoung-clip1_h480p.mov"]
                              andTheater:downTown],
                    [Movie movieWithName:@"Zero To Dusk"
-                              showTimes:[NSArray arrayWithObjects:@"10:00", @"12:00", @"3:00", nil]
-                                  image:@"nine"
-                             trailerURL:[NSURL URLWithString:@""]
+                              showTimes:[NSArray arrayWithObjects:@"1:00 PM", @"3:40 PM", @"7:30 PM", nil]
+                                  image:@"tickets"
+                             trailerURL:[NSURL URLWithString:@"http://trailers.apple.com/movies/independent/awarewolfboy/warewolfboy-tlr1_h480p.mov"]
                              andTheater:downTown],
                    [Movie movieWithName:@"Dumb Me"
-                              showTimes:[NSArray arrayWithObjects:@"10:00", @"12:00", @"3:00", nil]
-                                  image:@"ten"
-                             trailerURL:[NSURL URLWithString:@""]
+                              showTimes:[NSArray arrayWithObjects:@"3:00 PM", @"6:00 PM", @"8:00 PM", @"9:00 PM", nil]
+                                  image:@"tickets"
+                             trailerURL:[NSURL URLWithString:@"http://trailers.apple.com/movies/independent/upstreamcolor/upstreamcolor-tsr1_h480p.mov"]
                              andTheater:downTown],
                    [Movie movieWithName:@"Step It Out"
-                              showTimes:[NSArray arrayWithObjects:@"10:00", @"12:00", @"3:00", nil]
-                                  image:@"eleven"
-                             trailerURL:[NSURL URLWithString:@""]
+                              showTimes:[NSArray arrayWithObjects:@"6:00 PM", @"7:00 PM", @"9:00 PM", nil]
+                                  image:@"tickets"
+                             trailerURL:[NSURL URLWithString:@"http://trailers.apple.com/movies/independent/mollystheory/mollystheory-tlr1_h480p.mov"]
                              andTheater:superior],
                    [Movie movieWithName:@"Maximum Run"
-                              showTimes:[NSArray arrayWithObjects:@"10:00", @"12:00", @"3:00", nil]
-                                  image:@"twelve"
-                             trailerURL:[NSURL URLWithString:@""]
+                              showTimes:[NSArray arrayWithObjects:@"10:00 AM", @"3:00 PM", @"4:00 PM", nil]
+                                  image:@"tickets"
+                             trailerURL:[NSURL URLWithString:@"http://trailers.apple.com/movies/ifc_films/savethedate/savethedate-clip1_h480p.mov"]
                              andTheater:superior],
                    [Movie movieWithName:@"Explore The Wild"
-                              showTimes:[NSArray arrayWithObjects:@"10:00", @"12:00", @"3:00", nil]
-                                  image:@"thirteen"
-                             trailerURL:[NSURL URLWithString:@""]
+                              showTimes:[NSArray arrayWithObjects:@"11:50 PM", @"5:20 PM", @"8:45 PM", @"10:10 PM", nil]
+                                  image:@"tickets"
+                             trailerURL:[NSURL URLWithString:@"http://trailers.apple.com/movies/focus_features/admission/admission-tlr1_h480p.mov"]
                              andTheater:superior],
                    [Movie movieWithName:@"Wishing You Were Here"
-                              showTimes:[NSArray arrayWithObjects:@"10:00", @"12:00", @"3:00", nil]
-                                  image:@"fourteen"
-                             trailerURL:[NSURL URLWithString:@""]
+                              showTimes:[NSArray arrayWithObjects:@"4:10 PM", @"6:15 PM", @"9:40 PM", @"11:35 PM", nil]
+                                  image:@"tickets"
+                             trailerURL:[NSURL URLWithString:@"http://trailers.apple.com/movies/magnolia_pictures/deadfall/deadfall-clip2_h480p.mov"]
                              andTheater:superior],
                    [Movie movieWithName:@"Happy Joy Joy"
-                              showTimes:[NSArray arrayWithObjects:@"10:00", @"12:00", @"3:00", nil]
-                                  image:@"fifteen"
-                             trailerURL:[NSURL URLWithString:@""]
+                              showTimes:[NSArray arrayWithObjects:@"11:00 AM", @"2:00 PM", @"9:05 PM", nil]
+                                  image:@"tickets"
+                             trailerURL:[NSURL URLWithString:@"http://trailers.apple.com/movies/independent/thehost/thehost-tlr2_h480p.mov"]
                              andTheater:superior],
                    nil];
 }
@@ -125,12 +125,11 @@
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - UITableViewDataSource
 
- - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     NSArray* theaters = [Movie theatersForMovies:self.movies];
     Theater* theater = [theaters objectAtIndex:section];
@@ -185,7 +184,9 @@
 {
     if ([kPushDetailsViewSegue isEqualToString:segue.identifier]) {
         NSIndexPath* indexPath = [self.tableView indexPathForSelectedRow];
-        Movie* movie = [self.movies objectAtIndex:indexPath.row];
+        NSArray* theaters = [Movie theatersForMovies:self.movies];
+        Theater* theater = [theaters objectAtIndex:indexPath.section];
+        Movie* movie = [[Movie moviesForTheater:theater fromMovies:self.movies] objectAtIndex:indexPath.row];
         DetailViewController* detailVC = (DetailViewController*)segue.destinationViewController;
         detailVC.movie = movie;
     }

@@ -9,8 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "Movie.h"
 
-@interface DetailViewController : UIViewController
+@interface DetailViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) Movie* movie;
+@property (weak, nonatomic) IBOutlet UIImageView *movieImage;
+@property (weak, nonatomic) IBOutlet UILabel *movieTitle;
+@property (weak, nonatomic) IBOutlet UITableView *showtimesTableView;
+
+- (IBAction)launchTrailer:(id)sender;
 
 @end

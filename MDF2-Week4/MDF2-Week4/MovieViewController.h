@@ -11,6 +11,6 @@
 
 @interface MovieViewController : UIViewController
 
-@property (nonatomic, strong) NSString* movieURL;
+@property (nonatomic, strong) NSURL* movieURL;
 
 @end
